@@ -15,8 +15,12 @@ Remarques : Le cours et la volatilité des 4 actions, le taux sans risque, le ta
 L'objectif du code est dans un premier temps de simuler les trajectoires des 4 actifs corrélés à l'aide d'un modèle de diffusion géométrique brownien. Puis le code donne la moyenne des actifs pour chaque simulation et chaque observation pour former un panier.
 Un graphique est généré afin de visualiser 30 trajectoires du panier simulé, sans tenir compte de la barrière d'autocall à chaque trimestre (la simulation continue même si le panier dépasse les 100% de sa valeur initiale)
 
+![Echantillon de 30 trajectoires simulées](graphiques/echantillon_trajectoires.png)
+
 Ensuite, le code calcule les payoffs pour chaque simulation en fonction des conditions d'autocall et de la valeur finale du panier, puis actualise ces payoffs. Le code estime également le prix de l'autocall par Monte Carlo (10 000 simulations)
 Ces éléments sont affichés sur le graphique ci-dessous :
+
+![Distribution des payoffs actualisés](graphiques/distribution_payoffs_actualisés.png)
 
 En soustrayant le prix estimé au prix d'émission de 1000€ (donné par la brochure officielle de l'autocall), le code essaie d'estimer une marge implicite fictive.
 La fin du code prend en charge la vérification de la cohérence des résultats :
